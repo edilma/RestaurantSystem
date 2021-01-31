@@ -71,6 +71,36 @@ namespace RestaurantSystem.Migrations
 
                     b.ToTable("Employee");
                 });
+
+            modelBuilder.Entity("RestaurantSystem.Models.Product", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CookingTimeMinutes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PizzaSize")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PizzaType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ProductCost")
+                        .HasColumnType("float");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Products");
+                });
 #pragma warning restore 612, 618
         }
     }

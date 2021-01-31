@@ -17,5 +17,7 @@ namespace RestaurantSystem.Data
         public DbSet<RestaurantSystem.Models.Employee> Employee { get; set; }
 
         public DbSet<RestaurantSystem.Models.Customer> Customer { get; set; }
+
+        public DbSet<RestaurantSystem.Models.Product> Products { get; set; }
     }
 }

@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models
 {
-    public class OrderProducts
+    public class OrderProduct
     {
         public int ID { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }
 
-        public OrderProducts() { }
+        public OrderProduct() { }
     }
 }

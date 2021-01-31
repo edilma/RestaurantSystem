@@ -5,22 +5,22 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models
 {
-    public class Products
+    public class Product
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public string PizzaType { get; set; }
         public int PizzaSize { get; set; }
         public double  Price { get; set; }
-        public DateTime CookingTimeMinutes { get; set; }
+        public int CookingTimeMinutes { get; set; }
         public double ProductCost { get; set; }
 
-        public Products() { }
-        public Products(string aName, string aPizzaType, double aPrice , DateTime aCookingTimeMinutes , double aProductCost)
+        public Product() { }
+        public Product(string aName, string aPizzaType, int aPizzaSize, double aPrice , int aCookingTimeMinutes , double aProductCost)
         {
             Name = aName;
             PizzaType = aPizzaType;
-            PizzaSize = 14;
+            PizzaSize = aPizzaSize ;
             Price = aPrice;
             CookingTimeMinutes = aCookingTimeMinutes;
             ProductCost = aProductCost;
