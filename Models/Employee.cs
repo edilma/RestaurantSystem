@@ -16,12 +16,12 @@ namespace RestaurantSystem.Models
 
 
         public Employee() { }
-        public Employee (string aName, string aLastName, string aSocialSecurityNumber, double aEmployeePayRateAmount)
+        public Employee (string aName, string aLastName, string aSocialSecurityNumber, double aEmployeePayRateAmount, bool aEmploymentStatus)
         {
             Name = aName;
             LastName = aLastName;
             SocialSecurityNumber = aSocialSecurityNumber;
-            EmploymentStatus = false;
+            EmploymentStatus = aEmploymentStatus;
             EmployeePayRateAmount = aEmployeePayRateAmount;
             
 

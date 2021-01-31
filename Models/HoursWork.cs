@@ -8,16 +8,15 @@ namespace RestaurantSystem.Models
     public class HoursWork
     {
         public int ID { get; set; }
-        public Employee Employee { get; set; }
         public int EmployeeID { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime WorkDate { get; set; }
         public int HoursWorkAmount { get; set; }
 
         public HoursWork() { }
-        public HoursWork(Employee anEmployee, int anHoursWorkAmount)
+        public HoursWork(int anEmployeeId, DateTime aWorkDate , int anHoursWorkAmount)
         {
-            Employee = anEmployee;
-            Date = DateTime.Today;
+            EmployeeID = anEmployeeId;
+            WorkDate = aWorkDate;
             HoursWorkAmount = anHoursWorkAmount;
 
         }
