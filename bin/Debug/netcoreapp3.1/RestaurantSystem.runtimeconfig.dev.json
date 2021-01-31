@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\edilm\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\edilm\\.nuget\\packages"
+    ]
+  }
+}
