@@ -186,3 +186,8 @@ C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcorea
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Details.cshtml.g.cs
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Edit.cshtml.g.cs
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Index.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Create.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Delete.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Details.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs

@@ -13,6 +13,7 @@ namespace RestaurantSystem.Models
         public int CustomerID { get; set; }
         public Employee Employee { get; set; }
         public int EmployeeID { get; set; }
+        [Display(Name = "Order Date/Time")]
         public DateTime OrderReceivedDate { get; set; }
         
         [Range(1, 100, ErrorMessage = "Tip must be between $1 and $100")]
