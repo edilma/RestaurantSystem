@@ -26,9 +26,8 @@ namespace RestaurantSystem.Models
         public int CookingTimeMinutes { get; set; }
        
         [Range(1, 100, ErrorMessage = "Price must be between $1 and $100")]
-        public double ProductCost { get; set; }
-        public ICollection<OrderProduct> OrderProducts { get; set; }
-
+        public decimal ProductCost { get; set; }
+        
         public Product() { }
        
 

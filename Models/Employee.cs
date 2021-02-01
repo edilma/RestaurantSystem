@@ -21,7 +21,7 @@ namespace RestaurantSystem.Models
         [StringLength(9)]
         public string SocialSecurityNumber { get; set; }
         public bool EmploymentStatus { get; set; }
-        public double EmployeePayRateAmount { get; set; }
+        public decimal EmployeePayRateAmount { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
 
 

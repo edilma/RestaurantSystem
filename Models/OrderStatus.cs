@@ -7,6 +7,7 @@ namespace RestaurantSystem.Models
 {
     public class OrderStatus
     {
+        public int ID { get; set; }
         public string State  { get; set; }
         public Order Order { get; set; }
         public int OrderID { get; set; }

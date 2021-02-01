@@ -16,9 +16,10 @@ namespace RestaurantSystem.Models
         public DateTime OrderReceivedDate { get; set; }
         
         [Range(1, 100, ErrorMessage = "Tip must be between $1 and $100")]
+        [Display(Name = "Enter Tip Amount")]
         public decimal OrderTipAmount { get; set; }
-        public ICollection<OrderStatus> States { get; set; }
-        public ICollection<OrderProduct> OrderProducts { get; set; }
+        public virtual ICollection<OrderStatus> States { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         public Order() { }
         
 
