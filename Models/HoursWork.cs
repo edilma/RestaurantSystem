@@ -13,13 +13,7 @@ namespace RestaurantSystem.Models
         public int HoursWorkAmount { get; set; }
 
         public HoursWork() { }
-        public HoursWork(int anEmployeeId, DateTime aWorkDate , int anHoursWorkAmount)
-        {
-            EmployeeID = anEmployeeId;
-            WorkDate = aWorkDate;
-            HoursWorkAmount = anHoursWorkAmount;
-
-        }
+        
 
     }
 }

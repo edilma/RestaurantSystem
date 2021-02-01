@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models
 {
-    public enum OrderStatus
+    public class OrderStatus
     {
-        Received, Preparing, Baking, Delivering, Delivered
+        public string State  { get; set; }
+        public Order Order { get; set; }
+        public int OrderID { get; set; }
+        public DateTime  ChangeOrderStateTime { get; set; }
+
     }
 }

@@ -2,31 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace RestaurantSystem.Models
 {
     public class Product
     {
         public int ID { get; set; }
+        [Required(ErrorMessage = "Name is required")]
+        [MaxLength(128)]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Name is required")]
+        [MaxLength(50)]
         public string PizzaType { get; set; }
+        [Required(ErrorMessage = "Pizza Size is required")]
+        [StringLength(2)]
         public int PizzaSize { get; set; }
-        public double  Price { get; set; }
+        [Range(1, 100, ErrorMessage = "Price must be between $1 and $100")]
+        public decimal  Price { get; set; }
+        
+        [Required(ErrorMessage = "Pizza Size is required")]
+        [StringLength(2)]
         public int CookingTimeMinutes { get; set; }
+       
+        [Range(1, 100, ErrorMessage = "Price must be between $1 and $100")]
         public double ProductCost { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
 
         public Product() { }
-        public Product(string aName, string aPizzaType, int aPizzaSize, double aPrice , int aCookingTimeMinutes , double aProductCost)
-        {
-            Name = aName;
-            PizzaType = aPizzaType;
-            PizzaSize = aPizzaSize ;
-            Price = aPrice;
-            CookingTimeMinutes = aCookingTimeMinutes;
-            ProductCost = aProductCost;
-
-
-        }
+       
 
 
     }
