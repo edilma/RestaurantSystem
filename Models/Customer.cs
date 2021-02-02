@@ -16,8 +16,9 @@ namespace RestaurantSystem.Models
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
         public string LastName { get; set; }
-        
-        [Required(ErrorMessage = "Address is required")]
+
+        [Display(Name = "Address", Prompt = "Walk-in Customer")]
+        [Required(ErrorMessage = "If Walk-in Customer write Walk-in")]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "ZipCode is required")]

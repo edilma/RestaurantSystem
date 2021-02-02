@@ -1,0 +1,75 @@
+﻿@model RestaurantSystem.ViewModel.AddOrderViewModel
+@{
+    ViewData["Title"] = "Order Creation";
+}
+<div class="jumbotron">
+
+    <br />
+    <h4>Add Items to Order</h4>
+    <br />
+    <form asp-controller="Home" asp-action="Add" method="post">
+
+        <div class="form-group">
+            <label asp-for="OrderReceivedDate"></label>
+            <input class="form-control" asp-for="OrderReceivedDate" />
+            <span asp-validation-for="OrderReceivedDate"></span>
+        </div>
+        <input type="hidden" name="CustomerID" value="@Model.CustomerID" />
+        <select asp-for="Model.ProductID" asp-items="Model.myProducts"></select>
+
+        <div>
+            @foreach (var product in Model.myProducts)
+            {
+                <div class="form-group">
+                    <label asp-for="product.nane"></label>
+
+                </div>
+
+            }
+
+
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="Products"></label>
+            <select asp-for="Products" asp-items="@new SelectList(Model.Products) >
+                <option>Please select one</option>
+          </select>
+
+            <input type=" hidden" name="CarID" value="@Model.CarID" />
+            <span asp-validation-for="MaintenanceTypeID"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input class="form-control" asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ZipCode" class="form-control-label"></label>
+            <input class="form-group" asp-for="ZipCode" />
+            <span asp-validation-for="ZipCode"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber"></label>
+            <input class="form-control" asp-for="PhoneNumber" />
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+        <select asp-for="Products"
+                asp-items="@(new SelectList(Model.Products,"Name", "PizzaType","Price" ))">
+            <option>Please select one</option>
+        </select>
+
+        <input type="submit" />
+
+        <div class="card-footer">
+            <input class="btn btn-primary btn-lg" type="submit" value="Ver Websites de Desempleo" />
+
+
+        </div>
+    </form>
+</div>

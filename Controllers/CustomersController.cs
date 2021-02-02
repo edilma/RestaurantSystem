@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RestaurantSystem.Data;
 using RestaurantSystem.Models;
+using RestaurantSystem.ViewModel;
 
 namespace RestaurantSystem.Views.Customers
 {
@@ -48,6 +49,34 @@ namespace RestaurantSystem.Views.Customers
         {
             return View();
         }
+
+        // POST: Customers/Add
+        [HttpPost]
+        public IActionResult AddCustomer(AddCustomerViewModel addCustomerViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Customer myCustomer = new Customer()
+                {
+                    Name = addCustomerViewModel.Name,
+                    LastName = addCustomerViewModel.LastName,
+                    Address = addCustomerViewModel.Address,
+                    ZipCode = addCustomerViewModel.ZipCode,
+                };
+                _context.Customer.Add(myCustomer);
+                _context.SaveChanges();
+
+
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
+
 
         // POST: Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 

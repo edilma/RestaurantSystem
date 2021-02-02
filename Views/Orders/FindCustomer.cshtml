@@ -1,4 +1,4 @@
-﻿@model RestaurantSystem.ViewModel.AddOrderViewModel
+﻿
 @{
     ViewData["Title"] = "Start Order";
 }
@@ -9,16 +9,13 @@
 <p></p>
 <div class="row align-items-center my-5">
     <div class="col-lg-7">
+       
+
         <form asp-controller="Orders" asp-action="Add" method="post">
-            <div class="input-group">
-                <div class="form-group">
-                    <label asp-for="PhoneNumber"></label>
-                    <input class="form-control" asp-for="PhoneNumber" />
-                    <span asp-validation-for="PhoneNumber"></span>
-                </div>
-                <input type="submit" value="Search">
-                
-            </div>
+            <label for="PhoneNumber">Enter a phone number:</label><br><br>
+            <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="9545551234" /><br><br>
+            <small>Format: 954-555-1234</small><br><br>
+            <input type="submit" value="Search Phone Number">
         </form>
-        </div>
+    </div>
 </div>

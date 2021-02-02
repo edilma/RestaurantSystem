@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using RestaurantSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -10,12 +10,8 @@ namespace RestaurantSystem.ViewModel
 {
     public class AddOrderViewModel
     {
-        // public int CustomerID { get; set; }
-        //public int EmployeeID { get; set; }
-        [Display(Name = "Phone Number")]
-        [RegularExpression(@"^[0-9]{10}$",
-        ErrorMessage = "Only NUMBERS are allowed")]
-        public string PhoneNumber { get; set; }
+        public int CustomerID { get; set; }
+        public Customer Customer { get; set; }
 
         [Display(Name = "Order Date/Time")]
         public DateTime OrderReceivedDate { get; set; }
@@ -24,11 +20,27 @@ namespace RestaurantSystem.ViewModel
         [Display(Name = "Enter Tip Amount")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal OrderTipAmount { get; set; }
-        public List<Product>Products { get; set; }
-        public List<OrderStatus>Statuses { get; set; }
+        public List<Product> Products { get; set; }
 
+        public int ProductID { get; set; }
         
         public AddOrderViewModel()
         { }
+        
+        //public AddOrderViewModel( IEnumerable<Product> myProducts)
+        //{
+        //    Products = new List<SelectListItem>();
+        //    foreach (Product product in myProducts)
+        //    {
+        //        Products.Add(new SelectListItem
+        //        {
+        //            Value = product.ID.ToString(),
+
+        //            Text = product.Name + product.PizzaType + product.PizzaSize + product.Price
+
+        //        });
+        //    }
+            
+        //}
     }
 }

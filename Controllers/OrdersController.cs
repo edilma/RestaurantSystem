@@ -31,20 +31,14 @@ namespace RestaurantSystem.Views.Orders
         //GET THE phone Number INFORMATION
         public IActionResult FindCustomer()
         {
-           // AddOrderViewModel addOrderViewModel = new AddOrderViewModel();
-            //addOrderViewModel.PhoneNumber = PhoneNumber;
+           
             return View();
         }
 
-        //Check if Customer Exist and if it does, go to create order
-        // if doesn't exist go to create customer
-        public IActionResult CheckCustomer(string PhoneNumber)
-        {
-            AddOrderViewModel addOrderViewModel = new AddOrderViewModel();
-            addOrderViewModel.PhoneNumber = PhoneNumber;
-            return View(addOrderViewModel);
-        }
 
+        // Check if the phone number is in the system.  
+        // If YES, there is already a customer ID.  Send it to create an order 
+        // If NO, then send to create a a new customer
         
         [HttpPost]
         public IActionResult Add(String PhoneNumber)
@@ -99,6 +93,32 @@ namespace RestaurantSystem.Views.Orders
             ViewData["EmployeeID"] = new SelectList(_context.Employee, "ID", "LastName");
             return View();
         }
+
+
+        // GET: Orders/Create/CustomerID
+        // Get a customer 
+        // Load the customer details and product details
+        // Load the view model with all the information
+        public IActionResult Create(int CustomerID)
+        {
+            Customer myCustomer = _context.Customer.Where(x => x.ID == CustomerID).FirstOrDefault();
+            if (myCustomer==null)
+            {
+                return Redirect("/Orders/FindCustomer");
+            }
+            else
+            {
+                AddOrderViewModel myOrder = new AddOrderViewModel();
+                myOrder.Products = _context.Products.ToList();
+                myOrder.Customer = myCustomer;
+                return View(myOrder);
+            }
+
+            //ViewData["CustomerID"] = new SelectList(_context.Customer, "ID", "Address");
+            //ViewData["EmployeeID"] = new SelectList(_context.Employee, "ID", "LastName");
+            //return View();
+        }
+
 
         // POST: Orders/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
