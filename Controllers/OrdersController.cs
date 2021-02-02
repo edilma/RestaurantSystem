@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RestaurantSystem.Data;
 using RestaurantSystem.Models;
+using RestaurantSystem.ViewModel;
 
 namespace RestaurantSystem.Views.Orders
 {
@@ -25,6 +26,51 @@ namespace RestaurantSystem.Views.Orders
             var restaurantSystemContext = _context.Order.Include(o => o.Customer).Include(o => o.Employee);
             return View(await restaurantSystemContext.ToListAsync());
         }
+
+        //Find out if customer already in system 
+        //GET THE phone Number INFORMATION
+        public IActionResult FindCustomer()
+        {
+           // AddOrderViewModel addOrderViewModel = new AddOrderViewModel();
+            //addOrderViewModel.PhoneNumber = PhoneNumber;
+            return View();
+        }
+
+        //Check if Customer Exist and if it does, go to create order
+        // if doesn't exist go to create customer
+        public IActionResult CheckCustomer(string PhoneNumber)
+        {
+            AddOrderViewModel addOrderViewModel = new AddOrderViewModel();
+            addOrderViewModel.PhoneNumber = PhoneNumber;
+            return View(addOrderViewModel);
+        }
+
+        
+        [HttpPost]
+        public IActionResult Add(String PhoneNumber)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Customer myCustomer = _context.Customer.Where(x => x.PhoneNumber == PhoneNumber).FirstOrDefault();
+                if (myCustomer == null)
+                {
+                    return Redirect("/Customers/Create");
+                }
+                else
+                {
+                    return Redirect("/Order/Create/"+ myCustomer.ID);
+                }
+
+            }
+            else
+            {
+                return View();
+            }
+            
+        }
+
+
 
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -12,6 +12,7 @@ namespace RestaurantSystem.Models
 
         [Required(ErrorMessage = "Phone Number is required")]
         public string PhoneNumber { get; set; }
+
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
         public string LastName { get; set; }

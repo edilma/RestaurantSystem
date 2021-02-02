@@ -13,11 +13,13 @@ namespace RestaurantSystem.Models
         public int CustomerID { get; set; }
         public Employee Employee { get; set; }
         public int EmployeeID { get; set; }
+
         [Display(Name = "Order Date/Time")]
         public DateTime OrderReceivedDate { get; set; }
         
         [Range(1, 100, ErrorMessage = "Tip must be between $1 and $100")]
         [Display(Name = "Enter Tip Amount")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal OrderTipAmount { get; set; }
         public virtual ICollection<OrderStatus> States { get; set; }
         public virtual ICollection<Product> Products { get; set; }
