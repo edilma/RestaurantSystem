@@ -29,20 +29,6 @@ namespace RestaurantSystem.ViewModel
         public AddOrderViewModel()
         { }
         
-        //public AddOrderViewModel( IEnumerable<Product> myProducts)
-        //{
-        //    Products = new List<SelectListItem>();
-        //    foreach (Product product in myProducts)
-        //    {
-        //        Products.Add(new SelectListItem
-        //        {
-        //            Value = product.ID.ToString(),
-
-        //            Text = product.Name + product.PizzaType + product.PizzaSize + product.Price
-
-        //        });
-        //    }
-            
-        //}
+        
     }
 }

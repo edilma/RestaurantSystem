@@ -67,7 +67,7 @@ namespace RestaurantSystem.Views.Customers
                 _context.SaveChanges();
 
 
-                return View();
+                return Redirect("/Order/Add/" + myCustomer.ID);
             }
             else
             {
