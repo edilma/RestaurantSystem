@@ -24,7 +24,7 @@ namespace RestaurantSystem.Models
         [Required(ErrorMessage = "ZipCode is required")]
         [StringLength(5)]
         public string ZipCode { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual List<Order> Orders { get; set; }
 
         public Customer() { }
       

@@ -41,7 +41,7 @@ namespace RestaurantSystem.Views.Orders
         // If NO, then send to create a a new customer
         
         [HttpPost]
-        public IActionResult Add(String PhoneNumber)
+        public IActionResult FindCustomer(String PhoneNumber)
         {
 
             if (ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace RestaurantSystem.Views.Orders
                 }
                 else
                 {
-                    return Redirect("/Order/Create/"+ myCustomer.ID);
+                    return Redirect("/Orders/Add/"+ myCustomer.ID);
                 }
 
             }
@@ -95,14 +95,44 @@ namespace RestaurantSystem.Views.Orders
         }
 
 
-        // GET: Orders/Create/CustomerID
+        // POST: 
         // Get a customer 
         // Load the customer details and product details
         // Load the view model with all the information
-        public IActionResult Create(int CustomerID)
+        [HttpPost]
+        public IActionResult Add(AddOrderViewModel addOrderViewModel)
+        {
+            Order myOrder = new Order()
+            {
+                EmployeeID=2,
+                CustomerID = addOrderViewModel.CustomerID,
+                OrderReceivedDate = addOrderViewModel.OrderReceivedDate,
+                Products = new List<Product>(),
+        };
+            foreach (string ProductID in addOrderViewModel.CustomerSelectedProduct)
+            {
+                Product myItem = _context.Products.Where(x => x.ID == Int32.Parse(ProductID)).FirstOrDefault();
+                myOrder.Products.Add(myItem);
+            }
+
+
+            _context.Add(myOrder);
+            _context.SaveChanges();
+
+
+            return Redirect("/");
+        }
+
+        // GET: 
+        // Get a customer 
+        // Load the customer details and product details
+        // Load the view model with all the information
+        [Route("Orders/Add/{CustomerID}")]
+        [HttpGet]
+        public IActionResult Add(int CustomerID)
         {
             Customer myCustomer = _context.Customer.Where(x => x.ID == CustomerID).FirstOrDefault();
-            if (myCustomer==null)
+            if (myCustomer == null)
             {
                 return Redirect("/Orders/FindCustomer");
             }
@@ -114,11 +144,7 @@ namespace RestaurantSystem.Views.Orders
                 return View(myOrder);
             }
 
-            //ViewData["CustomerID"] = new SelectList(_context.Customer, "ID", "Address");
-            //ViewData["EmployeeID"] = new SelectList(_context.Employee, "ID", "LastName");
-            //return View();
         }
-
 
         // POST: Orders/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 

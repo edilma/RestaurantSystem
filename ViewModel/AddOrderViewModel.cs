@@ -23,7 +23,9 @@ namespace RestaurantSystem.ViewModel
         public List<Product> Products { get; set; }
 
         public int ProductID { get; set; }
-        
+        public List<string> CustomerSelectedProduct { get; set; }
+
+
         public AddOrderViewModel()
         { }
         

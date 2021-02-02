@@ -21,8 +21,8 @@ namespace RestaurantSystem.Models
         [Display(Name = "Enter Tip Amount")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal OrderTipAmount { get; set; }
-        public virtual ICollection<OrderStatus> States { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public  List<OrderStatus> States { get; set; }
+        public  List<Product> Products { get; set; }
         public Order() { }
         
 

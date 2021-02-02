@@ -193,3 +193,4 @@ C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcorea
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Orders\FindCustomer.cshtml.g.cs
 C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Customers\AddCustomer.cshtml.g.cs
+C:\Users\edilm\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\netcoreapp3.1\Razor\Views\Orders\Add.cshtml.g.cs

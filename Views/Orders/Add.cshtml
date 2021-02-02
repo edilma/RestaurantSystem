@@ -1,0 +1,45 @@
+﻿@model RestaurantSystem.ViewModel.AddOrderViewModel
+@{
+    ViewData["Title"] = "Order Creation";
+}
+<div class="jumbotron">
+
+    <br />
+    <h4>Add Items to Order</h4>
+    <br />
+    <form asp-controller="Orders" asp-action="Add" method="post">
+
+        <div class="form-group">
+            <label asp-for="OrderReceivedDate"></label>
+            <input class="form-control" asp-for="OrderReceivedDate" />
+            <span asp-validation-for="OrderReceivedDate"></span>
+        </div>
+        <input type="hidden" name="CustomerID" value="@Model.Customer.ID" />
+
+        
+        <div class="form-group">
+            
+            @foreach (Product product in Model.Products)
+            {
+                <input name="CustomerSelectedProduct" type="checkbox" value=@product.ID /> 
+                @product.Name
+                @product.PizzaSize
+                @product.PizzaType
+                @product.Price
+                
+                <br />
+            }
+
+
+
+        </div>
+
+
+
+
+
+
+            <input type="submit" />
+>
+    </form>
+</div>
