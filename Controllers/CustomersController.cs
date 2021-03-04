@@ -61,6 +61,7 @@ namespace RestaurantSystem.Views.Customers
                     Name = addCustomerViewModel.Name,
                     LastName = addCustomerViewModel.LastName,
                     Address = addCustomerViewModel.Address,
+                    PhoneNumber= addCustomerViewModel.PhoneNumber,
                     ZipCode = addCustomerViewModel.ZipCode,
                 };
                 _context.Customer.Add(myCustomer);
