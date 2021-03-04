@@ -27,7 +27,8 @@ namespace RestaurantSystem.Models
         public bool EmploymentStatus { get; set; }
         [Display(Name = "Hourly Pay")]
         public decimal EmployeePayRateAmount { get; set; }
-        public virtual List<Order> Orders { get; set; }
+        public List<Order> EmployeeOrders { get; set; }
+        public List <HoursWork> EmployeeHoursWork { get; set; }
 
 
         public Employee() { }

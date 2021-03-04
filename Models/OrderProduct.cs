@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Models
 {
-    public class OrderStatus
+    public class OrderProduct
     {
         public int ID { get; set; }
-        public string State  { get; set; }
         public Order Order { get; set; }
         public int OrderID { get; set; }
-        public DateTime  ChangeOrderStateTime { get; set; }
-
+        public Product Product { get; set; }
+        public int ProductID { get; set; }
     }
 }
