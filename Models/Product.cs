@@ -38,9 +38,9 @@ namespace RestaurantSystem.Models
         [Display(Name = "Production Cost")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal ProductCost { get; set; }
-        public OrderProduct orderProduct { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; }
 
-        public Product() { }
+        
        
 
 

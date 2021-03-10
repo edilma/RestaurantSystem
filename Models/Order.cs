@@ -13,7 +13,7 @@ namespace RestaurantSystem.Models
         public int CustomerID { get; set; }
         public Employee Employee { get; set; }
         public int EmployeeID { get; set; }
-
+         
         [Display(Name = "Order Date/Time")]
         public DateTime OrderReceivedDate { get; set; }
         
@@ -22,7 +22,7 @@ namespace RestaurantSystem.Models
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal OrderTipAmount { get; set; }
         public  List<OrderState> OrderState { get; set; }
-        public  List<Product> Products { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; }
         public Order() { }
         
 

@@ -107,12 +107,12 @@ namespace RestaurantSystem.Views.Orders
                 EmployeeID=2,
                 CustomerID = addOrderViewModel.CustomerID,
                 OrderReceivedDate = addOrderViewModel.OrderReceivedDate,
-                Products = new List<Product>(),
+                OrderProducts = new List<OrderProduct>(),
         };
             foreach (string ProductID in addOrderViewModel.CustomerSelectedProduct)
             {
                 Product myItem = _context.Products.Where(x => x.ID == Int32.Parse(ProductID)).FirstOrDefault();
-                myOrder.Products.Add(myItem);
+                myOrder.OrderProducts.Add(myItem);
             }
 
 

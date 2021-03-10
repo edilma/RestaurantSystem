@@ -13,7 +13,7 @@ namespace RestaurantSystem.Models
         public DateTime WorkDate { get; set; }
         public int HoursWorkAmount { get; set; }
 
-        public HoursWork() { }
+        
         
 
     }
